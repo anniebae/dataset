@@ -1,0 +1,13 @@
+<img src="<%= @user.avatar %>" >
+<h2><%= @user.username %>!!!</h2>
+
+<div class='market-list'>
+	<% @farmers_markets.each do |market| %>
+		<div class='market'>
+			<p class='marketname'>
+				<%= market.market_name %> || <%= market.borough %> || <%= market.street_address %>
+			</p>
+		</div>
+	<% end %>
+</div>
+

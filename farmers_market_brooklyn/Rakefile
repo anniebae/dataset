@@ -1,0 +1,74 @@
+require 'bundler'
+require 'pry'
+Bundler.require
+
+require 'sinatra/activerecord/rake'
+require_relative 'models/user'
+
+namespace :db do
+	require_relative 'connection'
+	desc "Create farmers_market_db database"
+	task :create_db do
+		conn = PG::Connection.open()
+		conn.exec('CREATE DATABASE farmers_market_db;')
+		conn.close
+	end
+
+	desc "Drop farmers_market_db database"
+	task :drop_db do
+		conn = PG::Connection.open()
+		conn.exec('DROP DATABASE farmers_market_db;')
+		conn.close
+	end
+
+	# desc "migrate the database with the farmers market table"
+	# task :migrate do
+	# 	conn = PG::Connection.open({dbname: 'farmers_market_db'})
+
+	# 	sql_statement = <<-eos
+	# 		CREATE TABLE farmers_market (
+	# 			borough VARCHAR(255),
+	# 			market_name VARCHAR(255),
+	# 			street_address STRING
+	# 		);
+	# 	eos
+
+	# 	conn.exec(sql_statement)
+
+	# 	conn.close
+	# end
+
+	desc "seed database with the needed farmers market dataset"
+	task :load_data do
+
+		require 'CSV'
+
+		conn = PG::Connection.open({dbname: 'farmers_market_db'})
+
+		CSV.foreach('Farmers_Market_Brooklyn.csv', :headers => true) do |row|
+			borough = row["Borough"]
+			market_name = row["Market Name "]
+			street_address = row["Street Address"]
+
+
+			sql_statement = <<-eos
+				INSERT INTO farmers_market
+					(borough, market_name, street_address)
+				VALUES
+					($1, $2, $3)
+			eos
+
+			conn.exec_params(sql_statement, [borough, market_name, street_address])
+		end
+		conn.close
+	end
+
+	desc 'create junk data'
+	task :junk_data do
+		100.times do
+			user = User.new({username: Faker::Internet.user_name, avatar: Faker::Avatar.image})
+			user.password = Faker::Internet.password
+			user.save
+		end
+	end
+end

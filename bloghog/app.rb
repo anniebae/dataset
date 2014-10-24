@@ -26,6 +26,7 @@ end
 
 get '/profiles' do
   @users = User.all
+  @entries = Entry.all
   if session[:current_user]
     @user = User.find(session[:current_user])
     erb :'profiles/index'
@@ -34,6 +35,9 @@ get '/profiles' do
   end
 end
 
+# get '/login' do
+#   erb :'sessions/login'
+# end
 get '/sessions/new' do
   erb :'sessions/new'
 end
@@ -41,7 +45,7 @@ end
 post '/sessions' do
   user = User.find_by({username: params[:username]})
   if user.password == params[:password]
-    sessions[:current_user] = user.id
+    session[:current_user] = user.id
     redirect '/profiles'
   else
     redirect '/users/new'
@@ -50,5 +54,5 @@ end
 
 delete '/sessions' do
   session[:current_user] = nil
-  redirect ''
+  redirect '/'
 end

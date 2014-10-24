@@ -1,0 +1,11 @@
+<img src="<%= @user.avatar %>">
+<h2><%= @user.username %></h2>
+
+<div class='blog-list'>
+	<% @blogs.each do |blog| %>
+		<%= blog.title %>
+		<%= blog.post %>
+		<%= blog.date_posted%>
+		</div>
+	<% end %>
+</div>

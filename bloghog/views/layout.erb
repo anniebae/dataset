@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BLOGHOG</title>
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<script src='javascript/jquery.js'></script>
+	<script src='javascript/script.js'></script>
+</head>
+<body>
+	
+	<% if session[:current_user] %>
+		<form action="/sessions" method="post"><a href="/users/new">SIGN UP</a>
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="SIGN OUT">
+		</form>
+	
+		<form action="/profiles">
+			<input type="submit" value="Profile">
+		</form>
+	<% else %>
+		<center>
+		<ul>
+			<a href="/users/new">SIGN UP</a>
+			<a href="/sessions/new">SIGN IN</a>
+	<% end %>
+		</ul>
+		</center>
+
+	<%= yield %>
+
+</body>
+</html>

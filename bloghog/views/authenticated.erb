@@ -1,0 +1,21 @@
+<h1>Hi, <%= @current_user.username %>!</h1>
+
+<form action="/sessions" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Logout">
+</form>
+
+<div class='miniuser-list'>
+	<% @entries.each do |entry| %>
+		<div class='miniuser'>
+			<p class='username'>
+				<%= entry.title.upcase %>
+				<br>
+				<%= entry.post %>
+				<br>
+				<%= entry.date_posted %>
+				<br>
+			</p>
+		</div>
+	<% end %>
+</div>

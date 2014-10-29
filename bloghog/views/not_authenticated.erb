@@ -1,0 +1,18 @@
+<h3>***YOU ARE NOT AUTHENTICATED***</h3>
+<h2><a href="/sessions/new">LOG IN</a></h2>
+<h2><a href="/users/new">CREATE AN ACCOUNT</a></h2>
+
+<div class='miniuser-list'>
+	<% @entries.each do |entry| %>
+		<div class='miniuser'>
+			<p class='username'>
+				<%= entry.title.upcase %>
+				<br>
+				<%= entry.post %>
+				<br>
+				<%= entry.date_posted %>
+				<br>
+			</p>
+		</div>
+	<% end %>
+</div>

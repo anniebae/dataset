@@ -10,3 +10,4 @@ map('/'){ run ApplicationController }
 map('/users'){ run UsersController }
 map('/sessions'){ run SessionsController }
 map('/profiles'){ run ProfilesController }
+map('/entries'){ run EntriesController }

@@ -1,15 +1,15 @@
+<center>
 <h1>Hi, <%= @current_user.username %>!</h1>
 
-<form action="/sessions" method="post">
-	<input type="hidden" name="_method" value="delete">
-	<input type="submit" value="Logout">
+<form action="/entries/new" method="get">
+	<input type="submit" value="Create new post">
 </form>
 
 <div class='miniuser-list'>
 	<% @entries.each do |entry| %>
 		<div class='miniuser'>
 			<p class='username'>
-				<%= entry.title.upcase %>
+				<a href="/entries/<%= entry.id %>"><b><%= entry.title.upcase %></b></a>
 				<br>
 				<%= entry.post %>
 				<br>
@@ -19,3 +19,4 @@
 		</div>
 	<% end %>
 </div>
+</center>

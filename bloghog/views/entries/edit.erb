@@ -1,0 +1,20 @@
+<h2>Edit this post:</h2>
+
+<form action="/entries/<%= @entry.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
+
+	<p>
+		TITLE:
+		<input class="title" name="entry[title]" value="<%= @entry.title %>" />
+	</p>
+	<p>
+		POST:
+		<input class="entrypost" name="entry[post]" value="<%= @entry.post %>">
+	</p>
+
+	<div class="myButton">
+		<input type="submit" value="E D I T !">
+	</div>
+
+
+</form>

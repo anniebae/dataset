@@ -1,6 +1,40 @@
+h1 {
+	font-size: 10em;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
 body {
-	background: url('http://4.bp.blogspot.com/-C6PdqXB9VwE/UKuLK3lMciI/AAAAAAAACUk/qODYHTdtSPQ/s640/Vassilis+Tangoulis.jpg');
+	background: url('http://crossroadstrading.com/wp-content/uploads/excuisite.co_.png');
 	background-repeat: no-repeat;
-	background-size: 100%;
-	color: white;
+	background-size: cover;
+	color: black;
+	font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
+
+div.myButton input {
+  cursor:pointer;
+  width: 145px;
+  height: 45px;
+  border: none;
+}
+
+.title {
+	display: block;
+	width: 500px;
+}
+
+.entrypost {
+	display: block;
+	width: 500px;
+	height: 300px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+a:hover {
+	color: rgb(152, 152, 150);
 }

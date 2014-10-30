@@ -8,13 +8,13 @@
 	<script src='javascript/script.js'></script>
 </head>
 <body>
-	
+	<center><h1><a href="/">B L O G H O G</a></h1></center>
 	<% if session[:current_user] %>
+	<center>
 		<form action="/sessions" method="post">
 			<input type="hidden" name="_method" value="delete">
 			<input type="submit" value="SIGN OUT">
 		</form>
-	
 		<form action="/profiles">
 			<input type="submit" value="Profile">
 		</form>
@@ -23,6 +23,7 @@
 		<ul>
 			<a href="/users/new">SIGN UP</a>
 			<a href="/sessions/new">SIGN IN</a>
+		</center>
 	<% end %>
 		</ul>
 		</center>

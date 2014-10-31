@@ -1,16 +1,17 @@
 <center>
-<h3><%= @entry.title %></h3>
-<h4><%= @entry.post %></h4>
-
-<a href="/entries/<%= @entry.id %>/edit">EDIT THIS POST</a>
-
-<br>
-<br>
-
-<form action="/entries/<%= @entry.id %>" method="post">
-	<input type="hidden" name="_method" value="delete" />
-	<div class="myButton">
-		<input type="submit" value="DELETE THIS POST">		
-	</div>
-</form>
+	<h2><b><%= @entry.title %></b></h2>
+		<div class="entrypost">
+			<h4><%= @entry.post %></h4>
+				<div>
+					<a href="/entries/<%= @entry.id %>/edit">EDIT THIS POST</a>
+						<br>
+						<br>
+					<form action="/entries/<%= @entry.id %>" method="post">
+						<input type="hidden" name="_method" value="delete" />
+							<div class="myButton">
+						<input type="submit" value="DELETE THIS POST">		
+							</div>
+					</form>
+				</div>	
+		</div>			
 </center>

@@ -1,21 +1,25 @@
 <div class='miniuser-list'>
+<center>
 
-<form action="/entries/new" method="get">
-	<input type="submit" value="Create a new post">
-</form>
 
-	<center>
+<div class="container">
+<ul>
 	<% @entries.each do |entry| %>
 		<div class='miniuser'>
-			<p class='username'>
-				<a href="/entries/<%= entry.id %>"><%= entry.title.upcase %></a>
+			
+				<a href="/entries/<%= entry.id %>"><b><%= entry.title.upcase %></b></a>
 				<br>
 				<%= entry.post %>
 				<br>
 				<%= entry.date_posted %>
 				<br>
-			</p>
+		
 		</div>
 	<% end %>
+</ul>
+</div>
+
+
+
 </center>
 </div>

@@ -1,11 +1,8 @@
 <center>
-<h1>Hi, <%= @current_user.username %>!</h1>
+<h3>Hi, <%= @current_user.username %>!</h3>
 
-<form action="/entries/new" method="get">
-	<input type="submit" value="Create new post">
-</form>
-
-<div class='miniuser-list'>
+<div class="container">
+<ul>
 	<% @entries.each do |entry| %>
 		<div class='miniuser'>
 			<p class='username'>
@@ -18,5 +15,6 @@
 			</p>
 		</div>
 	<% end %>
+</ul>
 </div>
 </center>

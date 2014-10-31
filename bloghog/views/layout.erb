@@ -8,9 +8,10 @@
 	<script src='javascript/script.js'></script>
 </head>
 <body>
-	<center><h1><a href="/">B L O G H O G</a></h1></center>
+	<center><h1><a href="/">B L O G H O G</a></h1>
+	<div id='cssmenu'>
 	<% if session[:current_user] %>
-	<center>
+
 		<form action="/sessions" method="post">
 			<input type="hidden" name="_method" value="delete">
 			<input type="submit" value="SIGN OUT">
@@ -18,15 +19,22 @@
 		<form action="/profiles">
 			<input type="submit" value="Profile">
 		</form>
+		<form action="/entries" method="get">
+			<input type="submit" value="View posts">
+		</form>
+		<form action="/entries/new" method="get">
+			<input type="submit" value="Create a post">
+		</form>
 	<% else %>
-		<center>
 		<ul>
-			<a href="/users/new">SIGN UP</a>
-			<a href="/sessions/new">SIGN IN</a>
-		</center>
-	<% end %>
+			<li class="active"><a href="/"><span>HOME</span></a></li>
+			<li><a href="/users/new"><span>JOIN BLOGHOG</span></a></li>
+			<li class="last"><a href="/sessions/new"><span>LOG IN</span></a></li>
 		</ul>
-		</center>
+	<% end %>
+
+		</div>
+</center>
 
 	<%= yield %>
 

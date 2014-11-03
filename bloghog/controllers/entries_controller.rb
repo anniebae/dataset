@@ -37,4 +37,22 @@ class EntriesController < ApplicationController
     redirect '/entries'
   end
 
+  # post '/:id/tags' do
+  #   tag = Tag.where(name: params[:entry_title])
+  #   entry = Entry.find(params[:id])
+  #   entry.tags << tag
+  #   redirect "/entries/#{entry.id}"
+  # end
+
+  # delete '/:id/tags' do
+  #   entry_id = params[:entry_id]
+  #   Tag.delete(params[:tag_id])
+  #   redirect "/entries/#{entry_id}"
+  # end
+
+  # get '/:id/tags' do
+  #   @entry = Entry.find(params[:id])
+  #   erb :'entries/tags'
+  # end
+
 end

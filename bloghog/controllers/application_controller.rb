@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
   enable :sessions, :method_override
 
   get '/' do
-    @entries = Entry.all
+    @entries = Entry.order(created_at: :desc).limit(100)
     if current_user
       erb :authenticated
     else

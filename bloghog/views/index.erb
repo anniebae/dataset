@@ -4,11 +4,13 @@
 	<% @entries.each do |entry| %>
 		<div class='miniuser'>
 			<p class='username'>
+
 				<a href="/entries/<%= entry.id %>"><b><%= entry.title.upcase %></b></a>
 				<br>
-				<%= entry.post %>
 				<br>
-				<%= entry.date_posted %>
+				<%= entry.post %>
+				<h5>#<%= entry.tags.join(", #")%></h5>
+				<h5>POSTED: <%= entry.date_posted %></h5>
 				<br>
 			</p>
 		</div>

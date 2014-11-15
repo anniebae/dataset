@@ -1,3 +1,4 @@
+<center>
 <h2>Edit this post:</h2>
 
 <form action="/entries/<%= @entry.id %>" method="post">
@@ -11,10 +12,11 @@
 		POST:
 		<textarea id="data" rows="30" cols="70" input class="entrypost" name="entry[post]"><%= @entry.post %></textarea>
 	</p>
-
+	
 	<div class="myButton">
 		<input type="submit" value="E D I T !">
 	</div>
 
 
 </form>
+</center>

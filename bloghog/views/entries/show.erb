@@ -1,7 +1,8 @@
 <center>
 	<h2><b><%= @entry.title %></b></h2>
 		<div class="entrypost">
-			<h4><%= @entry.post %></h4>
+			<h5>#<%= @entry.tags.join(", #")%></h5>
+			<h5>POSTED: <%= @entry.post %></h5>
 				<div>
 					<a href="/entries/<%= @entry.id %>/edit">EDIT THIS POST</a>
 						<br>

@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   get '/' do
-    @entries = Entry.all
+    @entries = Entry.order(created_at: :desc).limit(100)
     erb :'entries/index'
   end
 
@@ -37,6 +37,7 @@ class EntriesController < ApplicationController
     redirect '/entries'
   end
 
+  end
   # post '/:id/tags' do
   #   tag = Tag.where(name: params[:entry_title])
   #   entry = Entry.find(params[:id])
@@ -55,4 +56,3 @@ class EntriesController < ApplicationController
   #   erb :'entries/tags'
   # end
 
-end

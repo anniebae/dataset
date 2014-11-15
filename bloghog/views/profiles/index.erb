@@ -1,13 +1,10 @@
 <center>
-
-
-
 <h2><%= @user.username %></h2>
 <img src="<%= @user.avatar %>" class="avatar">
 
 <div class="container">
 <ul>
-	<% @entries.each do |entry| %>
+	<% current_user.entries.each do |entry| %>
 		<div class='miniuser'>
 			<p class='username'>
 				<a href="/entries/<%= entry.id %>"><b><%= entry.title.upcase %></b></a>

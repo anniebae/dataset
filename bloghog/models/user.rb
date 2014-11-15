@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   has_many :entries
+  
   include BCrypt
 
   def tags

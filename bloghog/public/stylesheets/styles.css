@@ -9,8 +9,8 @@ body {
 
 h1 {
   font-size: 6em;
-  font-weight: 100px;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 80px;
+  font-family: 'Playfair Display', serif;
 }
 
 h3 {
@@ -31,7 +31,7 @@ h5 {
 
 div.myButton input {
   cursor:pointer;
-  width: 145px;
+  width: 135px;
   height: 45px;
   border: none;
 }
@@ -48,13 +48,13 @@ div.myButton input {
 
 input[type="text"]{
 	font-family: calibri;
-	font-size: 20px;
+	font-size: 15px;
 	color: black;
 }
 
 input[type="password"]{
 	font-family: calibri;
-	font-size: 20px;
+	font-size: 15px;
 	color: black;
 }
 

@@ -11,7 +11,7 @@
 				<br>
 				<%= entry.post %>
 				<h5>#<%= entry.tags.join(", #")%></h5>
-				<h5>POSTED: <%= entry.date_posted %></h5>
+				<h5>POSTED: <%= entry.date_posted %> | Written by: <%= entry.user_id %></h5>
 			</p>
 		</div>
 	<% end %>

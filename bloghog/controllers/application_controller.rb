@@ -15,7 +15,6 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
-    binding.pry
     @entries = Entry.order(created_at: :desc).limit(100)
     if current_user
       erb :authenticated
